@@ -1,4 +1,4 @@
-package model;
+package com.lf.chat.model;
 
 public class ChatMessage {
     private MessageType type;
