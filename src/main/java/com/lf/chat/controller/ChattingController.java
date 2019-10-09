@@ -20,7 +20,7 @@ public class ChattingController {
 
     @MessageMapping("/message")
     public void sendMessage(ChattingMessage message) throws Exception {
-        Thread.sleep(1000); // simulated delay
+        //Thread.sleep(2000); // simulated delay
         sender.send(BOOT_TOPIC, message.getMessage() + "|" + message.getUser());
     }
 

@@ -1,13 +1,13 @@
 var user;
 $(function(){
-  user = prompt("Please enter your name.", "steve");
+  user = prompt("Please enter your name.", "ragini");
 
-  if(user != "steve" && user != "bread"){
+  /*if(user != "rudra" && user != "ragini"){
    alert(user + " is an unauthorized user!!");
    window.close();
-  }else{
+  }else{*/
    alert(user + "!! Wellcome!!");
-  }
+  //}
 });
 
 var $messages = $('.messages-content'),
@@ -26,8 +26,8 @@ $( window ).ready(function() {
 });
 
 var info = [
-  'Brad Pitt|Bread|profile-80.jpg',
-  'Seunghoon Oh|Steve|steve.jpg'
+  'Ragini|Ragini|profile-80.jpg',
+  'Rudra|Rudra|steve.jpg'
 ]
 
 var userInfo;
@@ -37,7 +37,7 @@ var stompClient = null;
 function setInfo() {
 //  var user =  document.location.search.substr(1).split('&')[0].split('=')[1]
 
-  if(user == "steve"){
+  if(user == "ragini"){
     friendInfo = info[0].split('|');
     userInfo = info[1].split('|');
   }else{
