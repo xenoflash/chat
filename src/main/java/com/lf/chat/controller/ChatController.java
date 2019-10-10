@@ -1,5 +1,8 @@
 package com.lf.chat.controller;
 
+import com.lf.chat.kafka.consumer.Receiver;
+import com.lf.chat.kafka.producer.Sender;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -11,10 +14,22 @@ import com.lf.chat.model.ChatMessage;
 @Controller
 public class ChatController {
 
-    @MessageMapping("/chat.sendMessage")
+    @Autowired
+    private Sender sender;
+
+    @Autowired
+    private Receiver receiver;
+    private static String BOOT_TOPIC = "public";
+
+    /*@MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
 	return chatMessage;
+    }*/
+
+    @MessageMapping("/chat.sendMessage")
+    public void sendMessage(ChatMessage chatMessage) {
+        sender.send(BOOT_TOPIC,chatMessage);
     }
 
     @MessageMapping("/chat.addUser")
