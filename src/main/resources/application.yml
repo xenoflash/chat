@@ -8,11 +8,11 @@ spring:
       auto-offset-reset: earliest
       group-id: boot
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.lf.chat.model.ChatMessageDeserializer
     producer:
       bootstrap-servers: 0.0.0.0:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.lf.chat.model.ChatMessageSerializer
 
 topic:
-  boot: chatting
+  boot: public
