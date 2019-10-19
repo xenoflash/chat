@@ -6,7 +6,7 @@ spring:
     consumer:
       bootstrap-servers: 0.0.0.0:9092
       auto-offset-reset: earliest
-      group-id: boot
+      group-id: boot2
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: com.lf.chat.model.ChatMessageDeserializer
     producer:
@@ -16,3 +16,16 @@ spring:
 
 topic:
   boot: public
+  
+security:
+  oauth2:
+    client:
+      clientId: 546799559402672
+      clientSecret: 9b82eafae4fd26e17cd9de32dd09e9dc
+      accessTokenUri: https://graph.facebook.com/oauth/access_token
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      tokenName: oauth_token
+      authenticationScheme: query
+      clientAuthenticationScheme: form
+    resource:
+      userInfoUri: https://graph.facebook.com/me

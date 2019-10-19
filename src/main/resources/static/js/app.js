@@ -16,10 +16,10 @@ var colors = [
     '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
 ];
 
-function connect(event) {
-    username = document.querySelector('#name').value.trim();
+function connect(usernameValue) {
 
-    if(username) {
+    if(usernameValue) {
+    	username = usernameValue;
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
 
@@ -28,7 +28,6 @@ function connect(event) {
 
         stompClient.connect({}, onConnected, onError);
     }
-    event.preventDefault();
 }
 
 
@@ -114,5 +113,11 @@ function getAvatarColor(messageSender) {
     return colors[index];
 }
 
-usernameForm.addEventListener('submit', connect, true)
-messageForm.addEventListener('submit', sendMessage, true)
+messageForm.addEventListener('submit', sendMessage, true);
+
+$.get("/user", function(data) {
+	if(data){
+		$("#user").html(data.userAuthentication.details.name);
+		connect(data.userAuthentication.details.name);		
+	}
+});
