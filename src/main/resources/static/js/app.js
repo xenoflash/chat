@@ -117,7 +117,7 @@ messageForm.addEventListener('submit', sendMessage, true);
 
 $.get("/user", function(data) {
 	if(data){
-		$("#user").html(data.userAuthentication.details.name);
-		connect(data.userAuthentication.details.name);		
+		$("#user").html(data);
+		connect(data);		
 	}
 });
