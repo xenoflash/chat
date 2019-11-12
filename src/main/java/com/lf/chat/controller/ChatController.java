@@ -20,6 +20,7 @@ public class ChatController {
     @Autowired
     private Receiver receiver;
     private static String BOOT_TOPIC = "public";
+    private static String END_TO_END_USER_BASE_URL="endToEnd/";
 
     /*
      * @MessageMapping("/chat.sendMessage")
@@ -39,6 +40,11 @@ public class ChatController {
 	// Add username in web socket session
 	headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
 	return chatMessage;
+    }
+
+    @MessageMapping("/chat.EndToEndChat")
+    public void sendOneToOneMessage(ChatMessage message){
+        sender.send((END_TO_END_USER_BASE_URL+message.getTo()),message);
     }
 
 }
