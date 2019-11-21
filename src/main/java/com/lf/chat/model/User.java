@@ -25,6 +25,9 @@ public class User {
     @Column
     private String status;
 
+    @Column
+    private String sessionId;
+
     public int getId() {
 	return id;
     }
@@ -55,6 +58,14 @@ public class User {
 
     public void setStatus(String status) {
 	this.status = status;
+    }
+
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId( String sessionId ) {
+        this.sessionId = sessionId;
     }
 
 }

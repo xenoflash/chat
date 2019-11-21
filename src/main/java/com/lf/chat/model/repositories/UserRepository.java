@@ -10,4 +10,6 @@ import com.lf.chat.model.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 
     User findByEmail(String email);
+
+    User findBySessionId(String sessionId);
 }
