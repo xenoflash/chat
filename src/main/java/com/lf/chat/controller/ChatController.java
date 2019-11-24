@@ -42,9 +42,9 @@ public class ChatController {
 	return chatMessage;
     }
 
-    @MessageMapping("/chat.EndToEndChat")
+    @MessageMapping("/sendMessage/chat.EndToEndChat")
     public void sendOneToOneMessage(ChatMessage message){
-        sender.send((END_TO_END_USER_BASE_URL+message.getTo()),message);
+        sender.send((END_TO_END_USER_BASE_URL+message.getReceiver()),message);
     }
 
 }

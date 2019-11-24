@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 var usernamePage = document.querySelector('#username-page');
@@ -120,4 +121,4 @@ $.get("/user", function(data) {
 		$("#user").html(data);
 		connect(data);		
 	}
-});
+});*/

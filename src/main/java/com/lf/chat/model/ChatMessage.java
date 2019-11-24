@@ -4,7 +4,7 @@ public class ChatMessage {
     private MessageType type;
     private String content;
     private String sender;
-    private String to;
+    private String receiver;
 
 
 
@@ -36,12 +36,12 @@ public class ChatMessage {
 	this.sender = sender;
     }
 
-    public String getTo() {
-        return to;
+    public String getReceiver() {
+        return receiver;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
 }

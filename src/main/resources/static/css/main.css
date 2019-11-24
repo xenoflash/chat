@@ -45,12 +45,12 @@ body:before {
 
 /*
 .form-control {
-    width: 100%;
+    width: 90%%;
     min-height: 38px;
     font-size: 15px;
     border: 1px solid #c8c8c8;
 }
-
+/*
 .form-group {
     margin-bottom: 15px;
 }
@@ -135,9 +135,7 @@ button.accent {
     height: 100%;
     position: fixed;
     z-index: 1;
-    top: 0;
     overflow-x: hidden;
-    padding-top: 20px;
 }
 
 /* Control the left side */
@@ -151,7 +149,6 @@ button.accent {
 .right {
     right: 0;
     width: 80%;
-    background-color: #c8c8c8;
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -162,6 +159,50 @@ button.accent {
     text-align: center;
 }
 
+
+
+.activeUsersRow{
+    width:100%;
+color: black;
+    z-index: 233;
+    transform: translateY(10px);
+    height: 75px;
+    border-style: solid;
+    border-color: darkgray;
+
+}
+
+.activeUsersTable{
+    width: 100%;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.activeUsersCell{
+padding: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.messageArea{
+    height: 92%;
+    background-color: white;
+}
+
+.messageInputArea{
+    height: 7%;
+}
+
+.messageInput{
+    height: inherit;
+    width: 90%;
+}
+
+.sendButton{
+    height: inherit;
+    width: 9%;
+}
 /*
 .username-page-container .username-submit {
     margin-top: 10px;
@@ -296,12 +337,12 @@ button.accent {
 }
 */
 
-@media screen and (max-width: 480px) {
-    /*
+/*@media screen and (max-width: 480px) {
+
     .chat-container {
         height: calc(100% - 30px);
     }
-    */
+
 
     .username-page-container {
         width: auto;
@@ -335,7 +376,7 @@ button.accent {
     .chat-header h2 {
         font-size: 1.1em;
     }
-    */
 
 
-}
+
+}*/
